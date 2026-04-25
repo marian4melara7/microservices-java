@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CurrencyController {
     private final CurrencyRepository repository;
 
-    @Value("${server.port}")
+    @Value("$server.port")
     private String port;
 
 
@@ -31,7 +31,7 @@ public class CurrencyController {
         target = target.toUpperCase();
         CurrencyEntity currency = repository.findBySourceCurrencyAndTargetCurrency(source, target)
                 .orElseThrow(() -> new Exception("Currency not found"));
-        String enviroment = "Currency Service running on Port: " + port;
+        String enviroment = "Currency Service running on port" + port;
         CurrencyDTO dto = new CurrencyDTO(
                 currency.getSourceCurrency(),
                 currency.getTargetCurrency(),
