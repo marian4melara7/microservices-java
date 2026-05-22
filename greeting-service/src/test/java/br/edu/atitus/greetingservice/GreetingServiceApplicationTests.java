@@ -1,13 +1,13 @@
 package br.edu.atitus.greetingservice;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+@SpringBootTest
 class GreetingServiceApplicationTests {
 
     @Test
     void contextLoads() {
-        assertTrue(true, "Teste básico funcionando");
     }
+
 }
